@@ -1,0 +1,51 @@
+{
+  "name": "@local/dsh-font-settings",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Pick the text, code, and terminal font stacks from the fonts installed on this system, replacing the shipped plain-text font fields with searchable, ordered stacks.",
+  "license": "MIT",
+  "icon": "./icon.svg",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-theme",
+        "@deepseek-ai/dsh-client-ui-primitives"
+      ]
+    }
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "locale/*.json"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "rebuild": "node scripts/build.mjs --force",
+    "verify": "node scripts/verify.mjs",
+    "clean": "node scripts/build.mjs --clean"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "@deepseek-ai/schemastery": "3.18.4"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh": "^0.2.1-rc.2"
+  }
+}

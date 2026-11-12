@@ -1,0 +1,45 @@
+{
+  "lockfileVersion": 1,
+  "registry": "https://registry.npmjs.org/",
+  "packages": {
+    "@deepseek-ai/schemastery@3.18.4": {
+      "name": "@deepseek-ai/schemastery",
+      "version": "3.18.4",
+      "resolved": "https://registry.npmjs.org/@deepseek-ai/schemastery/-/schemastery-3.18.4.tgz",
+      "integrity": "sha512-SSXO6tYuyrIqKVbmOnIq0s+riUywYzouFMcnBluHF9n4KMo2G8HvEzhCYj6pj2617/glOjbJuVInJ9hfONsjkg==",
+      "vendor": [
+        "package.json",
+        "LICENSE",
+        "lib/index.mjs",
+        "lib/index.cjs"
+      ],
+      "dependencies": {
+        "@deepseek-ai/cosmokit": "~1.8.5",
+        "@standard-schema/spec": "^1.1.0"
+      },
+      "note": "Host half's schema library: index.js imports its ESM entry for the sans/mono patterns and their volatile fields. Only the two built entries are vendored — the published README, TypeScript declarations (lib/types) and TypeScript sources (src) never load at runtime. Dependency values are the ranges schemastery declares, recorded for review; the version actually vendored is the one pinned in that package's own entry."
+    },
+    "@deepseek-ai/cosmokit@1.8.5": {
+      "name": "@deepseek-ai/cosmokit",
+      "version": "1.8.5",
+      "resolved": "https://registry.npmjs.org/@deepseek-ai/cosmokit/-/cosmokit-1.8.5.tgz",
+      "integrity": "sha512-LXsrlem9z8dq4sLflj2yuCuYX7KqhdzF5hZly3eZyuTo8d6oDSOXuEgC5DbQWKW+lksm6zmOutQLsP/ma6wR6A==",
+      "vendor": [
+        "package.json",
+        "LICENSE",
+        "lib/index.js"
+      ],
+      "dependencies": {},
+      "note": "schemastery's only runtime dependency: its single built entry, with no imports of its own. Pinned to 1.8.5 — the version DSH ships for its own copy of schemastery, which is what its ~1.8.5 range resolves to."
+    },
+    "@standard-schema/spec@1.1.0": {
+      "name": "@standard-schema/spec",
+      "version": "1.1.0",
+      "resolved": "https://registry.npmjs.org/@standard-schema/spec/-/spec-1.1.0.tgz",
+      "integrity": "sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==",
+      "vendor": [],
+      "dependencies": {},
+      "note": "Declared by schemastery but type-only: neither lib/index.mjs nor lib/index.cjs mentions it, so nothing is vendored. Recorded here to keep the closure complete."
+    }
+  }
+}

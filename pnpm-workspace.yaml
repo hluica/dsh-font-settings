@@ -1,0 +1,15 @@
+# Guard, not the build.
+#
+# The dependency tree in this directory is produced by `node scripts/build.mjs`
+# from `deps.lock.json`, which vendors pinned tarballs as real files. These
+# settings only matter if a package manager is run here anyway — for instance to
+# add a dependency before recording it in the lock — and they keep that run from
+# undoing the property the build guarantees: a flat tree of real directories, with
+# no `.pnpm` virtual store, no symlinked dependency edges, and no peers pulled in
+# on the plugin's behalf.
+packages:
+  - .
+
+nodeLinker: hoisted
+packageImportMethod: copy
+autoInstallPeers: false

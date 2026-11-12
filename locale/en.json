@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Fonts",
+    "description": "Takes over the text, code, and terminal fonts in General settings: search the fonts installed on this system and order a multi-family fallback stack, replacing the shipped plain-text fields."
+  }
+}

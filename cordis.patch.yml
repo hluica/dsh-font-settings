@@ -1,0 +1,3 @@
+- insert:
+    - id: ui-font
+      name: '@local/dsh-font-settings'
